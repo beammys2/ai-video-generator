@@ -1,0 +1,45 @@
+{
+  "name": "ai-video-generator",
+  "version": "1.0.0",
+  "description": "A full-stack web application that converts text prompts or image uploads into AI-generated videos",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "cd backend && pip install -r requirements.txt && cd ../frontend && yarn install",
+    "dev": "concurrently \"cd backend && uvicorn server:app --host 0.0.0.0 --port 8001 --reload\" \"cd frontend && yarn start\"",
+    "start": "npm run dev",
+    "backend": "cd backend && uvicorn server:app --host 0.0.0.0 --port 8001 --reload",
+    "frontend": "cd frontend && yarn start",
+    "build": "cd frontend && yarn build",
+    "test": "cd backend && python backend_test.py && cd ../frontend && yarn test",
+    "deploy": "npm run build && echo 'Ready for deployment'",
+    "setup": "cp backend/.env.example backend/.env && cp frontend/.env.example frontend/.env && echo 'Environment files created. Please edit them with your configuration.'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/ai-video-generator.git"
+  },
+  "keywords": [
+    "ai",
+    "video",
+    "generation",
+    "react",
+    "fastapi",
+    "mongodb",
+    "machine-learning",
+    "text-to-video",
+    "image-to-video"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/ai-video-generator/issues"
+  },
+  "homepage": "https://github.com/yourusername/ai-video-generator#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "python": ">=3.8.0"
+  }
+}
